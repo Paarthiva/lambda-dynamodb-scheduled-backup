@@ -22,3 +22,12 @@ jobs:
         bash build.sh        
       env:
         CI: true
+    
+    steps:
+    - uses: Teakowa/setup-serverless@v2.0.0
+      with:
+        provider: aws
+      #env:
+        #AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        #AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    - run: serverless -v
